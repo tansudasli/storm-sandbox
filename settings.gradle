@@ -1,0 +1,4 @@
+rootProject.name = 'storm-sandbox'
+include 'template'
+findProject(':template')?.name = 'storm'
+
