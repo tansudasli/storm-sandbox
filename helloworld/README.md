@@ -8,7 +8,7 @@ It works on local storm cluster. So no need to install apache storm cluster.
 
 ## How to start
 - [1] Clone the repository and `cd storm-sandbox/helloworld`.
-- [2] Run `./gradlew run` to start disributed computing
+- [2] Run `./gradlew run` to start distributed computing
 - [3] You will see below messages
  ```
   Emitting: Multiply-Bolt default [5314] (this is from debug part 2657*2=5314)
