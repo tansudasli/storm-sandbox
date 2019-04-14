@@ -59,6 +59,5 @@ public class fileReaderMovieRatingSpout extends BaseRichSpout {
 
         //Step -3: declare new Fields() w/ comma separated list of strings
         declarer.declare(new Fields("user-id","movie-id","rating","timespamp"));
-
     }
 }

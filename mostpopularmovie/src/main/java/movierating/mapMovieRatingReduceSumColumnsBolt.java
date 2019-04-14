@@ -23,7 +23,6 @@ public class mapMovieRatingReduceSumColumnsBolt extends BaseBasicBolt {
         movieId = input.getStringByField("movie-id");
         counter = input.getIntegerByField("counter");
 
-
         //toDo: emit message, use new Values(input.getInteger(0)) w/ comma separated list of strings
         collector.emit(new Values(movieId, 1));
 
