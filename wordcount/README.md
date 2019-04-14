@@ -18,6 +18,9 @@ It works on local storm cluster. So no need to install apache storm cluster.
 ## The Problem
 
 steps
-- [1] read file as lines in the **Spout**. It is up to you how you read. Just use the best practise and updated java file read methods! 
+- [1] read file as lines in the **fileReaderSpout**.  
 - [2] emit them as `Values()` to the **Bolt**.
 - [3] declare them as `Fields()` to the **Bolt**.
+- [4] emit them as `Values()` in the **Bolt**.
+- [5] declare them as `Fields()` in the **Bolt**.
+- [6] build topology in the **wordCountTopology**.
