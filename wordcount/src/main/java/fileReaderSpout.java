@@ -35,6 +35,7 @@ public class fileReaderSpout extends BaseRichSpout {
 
         } catch (IOException e) {
             System.out.println("Error reading file\n");
+            System.out.println(Paths.get(filePath).toAbsolutePath());
             e.printStackTrace();
         }
 

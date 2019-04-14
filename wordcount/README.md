@@ -11,8 +11,8 @@ It works on local storm cluster. So no need to install apache storm cluster.
 - [2] Run `./gradlew run` to start distributed computing
 - [3] You will see below messages
  ```
-  Emitting: Multiply-Bolt default [5314] (this is from debug part 2657*2=5314)
-  ------2657  (this is from code whic is emitted by spout)
+  9774 [Thread-22-Bolt-executor[1 1]] INFO  o.a.s.d.task - Emitting: Bolt default [Another]
+  Another after Bolt
   ```
   
 ## The Problem

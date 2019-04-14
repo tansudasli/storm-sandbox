@@ -14,7 +14,7 @@ public class wordCountTopology {
         //configuration and print emit messages to the console w/ debugging
         Config config = new Config();
         config.setDebug(true);
-        config.put("filePath", "datasets/words/starwars.pre.processed.txt");
+        config.put("filePath", "src/main/resources/datasets/words/starwars.pre.processed.txt");
 
         //Submit topology to cluster
         LocalCluster cluster = new LocalCluster();
