@@ -31,6 +31,7 @@ public class fileReaderMovieRatingSpout extends BaseRichSpout {
         try {
            lines = Files.readAllLines(Paths.get(movieRatingFilePath), UTF_8);
 
+            System.out.println("MovieRating-file-size: " + lines.size());
 
         } catch (IOException e) {
             System.out.println("Error reading file\n");
@@ -49,7 +50,7 @@ public class fileReaderMovieRatingSpout extends BaseRichSpout {
 
         //Step -2 : emit message, use new Values() w/ comma separated list of strings
         for (String line : lines)
-            this.collector.emit(new Values(line.split(",")));
+            this.collector.emit(new Values(line.split("\t")));
 
     }
 

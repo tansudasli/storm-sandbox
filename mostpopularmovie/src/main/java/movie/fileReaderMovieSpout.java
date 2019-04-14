@@ -13,6 +13,7 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
 
+import static java.nio.charset.StandardCharsets.ISO_8859_1;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class fileReaderMovieSpout extends BaseRichSpout {
@@ -29,7 +30,7 @@ public class fileReaderMovieSpout extends BaseRichSpout {
 
         //Step -1 : read file as lines
         try {
-           lines = Files.readAllLines(Paths.get(movieFilePath), UTF_8);
+           lines = Files.readAllLines(Paths.get(movieFilePath), ISO_8859_1);
 
 
         } catch (IOException e) {
@@ -49,7 +50,7 @@ public class fileReaderMovieSpout extends BaseRichSpout {
 
         //Step -2 : emit message, use new Values() w/ comma separated list of strings
         for (String line : lines)
-            this.collector.emit(new Values(line.split("|", 5)));
+            this.collector.emit(new Values(line.split("|")));
 
     }
 

@@ -1,5 +1,6 @@
 package movierating;
 
+import org.apache.storm.task.TopologyContext;
 import org.apache.storm.topology.BasicOutputCollector;
 import org.apache.storm.topology.OutputFieldsDeclarer;
 import org.apache.storm.topology.base.BaseBasicBolt;
@@ -7,19 +8,21 @@ import org.apache.storm.tuple.Fields;
 import org.apache.storm.tuple.Tuple;
 import org.apache.storm.tuple.Values;
 
+import java.util.Map;
+
 public class mapMovieRatingReduceColumnsBolt extends BaseBasicBolt {
     private String userId;
-    private Integer movieId;
+    private String movieId;
     private Integer rating;
     private String timespamp;
 
     @Override
     public void execute(Tuple input, BasicOutputCollector collector) {
         //implement transformation logic
-        userId = input.getStringByField("user-id");
-        movieId = input.getIntegerByField("movie-id");
-        rating = input.getIntegerByField("rating");
-        timespamp = input.getStringByField("timespamp");
+        //userId = input.getStringByField("user-id");
+        movieId = input.getStringByField("movie-id");
+        //rating = input.getIntegerByField("rating");
+        //timespamp = input.getStringByField("timespamp");
 
 
         //toDo: emit message, use new Values(input.getInteger(0)) w/ comma separated list of strings
@@ -31,5 +34,11 @@ public class mapMovieRatingReduceColumnsBolt extends BaseBasicBolt {
     public void declareOutputFields(OutputFieldsDeclarer declarer) {
         //toDo: declare new Fields() w/ comma separated list of strings
         declarer.declare(new Fields("movie-id", "counter"));
+    }
+
+    @Override
+    public void prepare(Map stormConf, TopologyContext context) {
+        //generate a fileName to write for example
+        super.prepare(stormConf, context);
     }
 }
