@@ -2,7 +2,7 @@ import org.apache.storm.Config;
 import org.apache.storm.LocalCluster;
 import org.apache.storm.topology.TopologyBuilder;
 
-public class Topology {
+public class wordCountTopology {
 
     public static void main(String[] args) throws InterruptedException {
         //Build topology and setup connections between them
@@ -14,14 +14,15 @@ public class Topology {
         //configuration and print emit messages to the console w/ debugging
         Config config = new Config();
         config.setDebug(true);
+        config.put("filePath", "datasets/words/starwars.pre.processed.txt");
 
         //Submit topology to cluster
         LocalCluster cluster = new LocalCluster();
 
         try {
-            cluster.submitTopology("Topology", config, builder.createTopology());
+            cluster.submitTopology("wordCountTopology", config, builder.createTopology());
 
-            Thread.sleep(1000);
+            Thread.sleep(2000);
         } finally {
             cluster.shutdown();
         }
