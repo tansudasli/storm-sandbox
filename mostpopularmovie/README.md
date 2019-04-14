@@ -1,8 +1,7 @@
 # Apache Storm - Most Popular Movie
 
-This storm application has
-* 1 spout for reading file as data source. This file is flatMapped output of Spark's `tansudasli/spark-sandbox/most-popular-movie.py`. 
-* 1 movierating.mapMovieRatingFilterColumnsBolt for transforming word's into k,1 and reducing them.
+This storm application is  very similar of Spark's application `tansudasli/spark-sandbox/most-popular-movie.py`. 
+
 
 It works on local storm cluster. So no need to install apache storm cluster.
 
@@ -29,3 +28,4 @@ steps
 - [4] 
 - [5] **movie.fileReaderMovieSpout** for Movie master data.
 - [6] 
+
