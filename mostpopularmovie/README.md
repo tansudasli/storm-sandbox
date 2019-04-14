@@ -11,8 +11,8 @@ It works on local storm cluster. So no need to install apache storm cluster.
 - [2] Run `./gradlew run` to start distributed computing
 - [3] You will see below messages
  ```
-  9774 [Thread-22-movierating.mapMovieRatingReduceColumnsBolt-executor[1 1]] INFO  o.a.s.d.task - Emitting: movierating.mapMovieRatingReduceColumnsBolt default [Another]
-  Another after movierating.mapMovieRatingReduceColumnsBolt
+  55971 [Thread-17-fileReaderMovieRatingSpout-executor[2 2]] INFO  o.a.s.d.task - Emitting: 
+  fileReaderMovieRatingSpout default [330, 216, 5, 876546470]
   ```
   
 ## The Problem
@@ -23,9 +23,9 @@ It works on local storm cluster. So no need to install apache storm cluster.
 * How can we **break this problem into Apache Storm building blocks**? 
 
 steps
-- [1] **movierating.fileReaderMovieRatingSpout** for Movie Rating data.  
-- [2] **movie.fileReaderMovieSpout** for Movie master data.
-- [3] **movierating.mapMovieRatingReduceColumnsBolt** to reduce columns into movie-id,1
+- [1] **movierating.fileReaderMovieRatingSpout** for Movie Rating data.  w/ **shuffleGrouping**
+- [2] **movierating.mapMovieRatingReduceColumnsBolt** to reduce columns into movie-id,1, w/ **fieldsGrouping**
+- [3] **
 - [4] 
-- [5] 
+- [5] **movie.fileReaderMovieSpout** for Movie master data.
 - [6] 
