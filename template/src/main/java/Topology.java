@@ -16,6 +16,7 @@ public class Topology {
         //configuration and print emit messages to the console w/ debugging
         Config config = new Config();
         config.setDebug(true);
+        config.put("key", "value");
 
         //Submit topology to cluster
         LocalCluster cluster = new LocalCluster();
