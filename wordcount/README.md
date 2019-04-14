@@ -1,7 +1,7 @@
 # Apache Storm - WordCount
 
 This storm application has
-* 1 spout for reading file as data source. This file is flatMapped output of Spark's `tansudasli/spark-sandbox/wordcount.py`. 
+* 1 spout for reading file as data source. This file is flatMapped output of Spark's `tansudasli/spark-sandbox/word-count.py`. 
 * 1 Bolt for transforming word's into k,1 and reducing them.
 
 It works on local storm cluster. So no need to install apache storm cluster.
