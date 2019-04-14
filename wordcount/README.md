@@ -18,5 +18,6 @@ It works on local storm cluster. So no need to install apache storm cluster.
 ## The Problem
 
 steps
-* read file as lines in the **Spout**, and emit them as `Values()` and `Fields()` to the **Bolt**. *So it is not important how you read the file !*
+* read file as lines in the **Spout**, and emit them as `Values()` and `Fields()` to the **Bolt**.
+ *So it is not important how you read the file !*
 * 
