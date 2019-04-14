@@ -46,18 +46,16 @@ public class fileReaderSpout extends BaseRichSpout {
     @Override
     public void nextTuple() {
 
-        //Step -2 : emit Values()
-        //toDo: emit message, use new Values() w/ comma separated list of strings
-        this.collector.emit(new Values());
+        //Step -2 : emit message, use new Values() w/ comma separated list of strings
+        for (String line : lines)
+            this.collector.emit(new Values(line));
 
-        //toDo: implement your action
     }
 
     @Override
     public void declareOutputFields(OutputFieldsDeclarer declarer) {
 
-        //Step -3 : declare Fields()
-        //toDo: declare new Fields() w/ comma separated list of strings
+        //Step -3: declare new Fields() w/ comma separated list of strings
         declarer.declare(new Fields("word"));
 
     }
