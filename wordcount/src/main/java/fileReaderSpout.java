@@ -34,6 +34,7 @@ public class fileReaderSpout extends BaseRichSpout {
 
 
         } catch (IOException e) {
+            System.out.println("Error reading file\n");
             e.printStackTrace();
         }
 
@@ -45,7 +46,7 @@ public class fileReaderSpout extends BaseRichSpout {
     @Override
     public void nextTuple() {
 
-        //Step -2 : read file as lines
+        //Step -2 : emit Values()
         //toDo: emit message, use new Values() w/ comma separated list of strings
         this.collector.emit(new Values());
 
@@ -55,8 +56,9 @@ public class fileReaderSpout extends BaseRichSpout {
     @Override
     public void declareOutputFields(OutputFieldsDeclarer declarer) {
 
+        //Step -3 : declare Fields()
         //toDo: declare new Fields() w/ comma separated list of strings
-        declarer.declare(new Fields("field"));
+        declarer.declare(new Fields("word"));
 
     }
 }
