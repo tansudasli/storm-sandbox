@@ -16,3 +16,4 @@ Every storm application contains:
 - [1] clone this git rep.
 - [2] open w/ IntelliJ community or Ultimate edition
 - [3] Look for the project folders and README.md files to run them separately.
+- [4] No need to install gradle sdk. 
