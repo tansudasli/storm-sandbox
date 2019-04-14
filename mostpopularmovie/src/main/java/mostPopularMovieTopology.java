@@ -1,8 +1,7 @@
 
 
-import movie.fileReaderMovieSpout;
 import movierating.fileReaderMovieRatingSpout;
-import movierating.mapMovieRatingReduceColumnsBolt;
+import movierating.mapMovieRatingFilterColumnsBolt;
 import movierating.mapMovieRatingReduceSumColumnsBolt;
 import org.apache.storm.Config;
 import org.apache.storm.LocalCluster;
@@ -16,10 +15,10 @@ public class mostPopularMovieTopology {
         TopologyBuilder builder = new TopologyBuilder();
 
         builder.setSpout("fileReaderMovieRatingSpout", new fileReaderMovieRatingSpout());
-        builder.setBolt("map-Movie-Rating-Reduce-Columns-Bolt", new mapMovieRatingReduceColumnsBolt(), 2)
+        builder.setBolt("map-Movie-Rating-Filter-Columns-Bolt", new mapMovieRatingFilterColumnsBolt(), 2)
                 .shuffleGrouping("fileReaderMovieRatingSpout");
         builder.setBolt("map-Movie-Rating-Reduce-Columns-Bolt", new mapMovieRatingReduceSumColumnsBolt(), 2)
-                .fieldsGrouping("map-Movie-Rating-Reduce-Columns-Bolt", new Fields("movie-id"));
+                .fieldsGrouping("map-Movie-Rating-Filter-Columns-Bolt", new Fields("movie-id"));
 
         //second resource dataset
         //builder.setSpout("file-Reader-Movie-Spout", new fileReaderMovieSpout());

@@ -10,7 +10,7 @@ import org.apache.storm.tuple.Values;
 
 import java.util.Map;
 
-public class mapMovieRatingReduceColumnsBolt extends BaseBasicBolt {
+public class mapMovieRatingFilterColumnsBolt extends BaseBasicBolt {
     private String userId;
     private String movieId;
     private Integer rating;

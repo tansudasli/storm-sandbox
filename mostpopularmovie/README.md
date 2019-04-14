@@ -2,7 +2,7 @@
 
 This storm application has
 * 1 spout for reading file as data source. This file is flatMapped output of Spark's `tansudasli/spark-sandbox/most-popular-movie.py`. 
-* 1 movierating.mapMovieRatingReduceColumnsBolt for transforming word's into k,1 and reducing them.
+* 1 movierating.mapMovieRatingFilterColumnsBolt for transforming word's into k,1 and reducing them.
 
 It works on local storm cluster. So no need to install apache storm cluster.
 
@@ -23,9 +23,9 @@ It works on local storm cluster. So no need to install apache storm cluster.
 * How can we **break this problem into Apache Storm building blocks**? 
 
 steps
-- [1] **movierating.fileReaderMovieRatingSpout** for Movie Rating data.  w/ **shuffleGrouping**
-- [2] **movierating.mapMovieRatingReduceColumnsBolt** to reduce columns into movie-id,1, w/ **fieldsGrouping**
-- [3] **
+- [1] **movierating.fileReaderMovieRatingSpout** for Movie Rating data, w/ **shuffleGrouping**
+- [2] **movierating.mapMovieRatingFilterColumnsBolt** to reduce columns into `movie-id,1` w/ **fieldsGrouping**
+- [3] **movierating.mapMovieRatingReduceSumColumnsBolt** to sum up `movie-id,100`, 
 - [4] 
 - [5] **movie.fileReaderMovieSpout** for Movie master data.
 - [6] 
