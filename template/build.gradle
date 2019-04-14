@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
 group 'com.tansu'
@@ -15,3 +16,5 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     compile group: 'org.apache.storm', name: 'storm-core', version: '1.0.5'
 }
+
+mainClassName = "Topology"
