@@ -13,4 +13,10 @@ It works on local storm cluster. So no need to install apache storm cluster.
  ```
   Emitting: Multiply-Bolt default [5314] (this is from debug part 2657*2=5314)
   ------2657  (this is from code whic is emitted by spout)
+  ```
+  
+## The Problem
 
+steps
+* read file as lines in the **Spout**, and emit them as `Values()` and `Fields()` to the **Bolt**. *So it is not important how you read the file !*
+* 

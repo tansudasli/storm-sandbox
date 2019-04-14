@@ -8,8 +8,8 @@ public class Topology {
         //Build topology and setup connections between them
         TopologyBuilder builder = new TopologyBuilder();
 
-        builder.setSpout("Spout", new Spout());
-        builder.setBolt("Bolt", new Bolt()).shuffleGrouping("Spout");
+        builder.setSpout("fileReaderSpout", new fileReaderSpout());
+        builder.setBolt("Bolt", new Bolt()).shuffleGrouping("fileReaderSpout");
 
         //configuration and print emit messages to the console w/ debugging
         Config config = new Config();

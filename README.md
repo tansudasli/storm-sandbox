@@ -2,14 +2,14 @@
 This is an IntelliJ workspace which contains many project as **modules**. So every app contains their own gradle scripts.
 
 Every storm application contains:
- * Spout,
+ * fileReaderSpout,
  * Bolt, and
  * Topology files.
 
 #### File Structure
 
 - [x] **template** to create storm application rapidly. It contains general structure and code units for generating storm apps.<br> 
-    - In Spout: open, nextTuple and declareOutputFields <br>
+    - In fileReaderSpout: open, nextTuple and declareOutputFields <br>
     - In Bold: execute and declareOutputFields <br>
     - In Topology: draw the topology and create cluster and execution.
 - [x] **helloworld** storm application. Read `/helloworld/README.md` file for more details.
